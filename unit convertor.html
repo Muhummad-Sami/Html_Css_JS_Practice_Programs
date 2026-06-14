@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 500px;
+            height: 450px;
+            border-radius: 20px;
+            margin: auto;
+            background-image: linear-gradient(to top, rgba(0, 255, 255, 0.954),rgba(67, 65, 65, 0.92));
+
+        }
+        label{
+            font-size: 26px;
+            margin-left: 50px;
+            margin-top: 60px;
+            font-weight: bolder;
+        }
+        #select{
+            width: 100px;
+            height: 44px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bolder;
+
+        }
+        #select:hover{
+            color: gray;
+        }
+
+        #value {
+            width: 180px;
+            height: 43px;
+            border-radius: 10px;
+            margin-top: 55px;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+           
+        }
+        #select1 {
+            width: 160px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+           
+        }
+        #select1:hover{
+            color: rgb(128, 127, 127);
+        }
+        .main2{
+            text-align: center;
+        }
+        button{
+            width: 180px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 23px;
+            font-weight: bolder;
+            text-align: center;
+            margin-left: 160px;
+            margin-top: 40px;
+
+        }
+        button:hover{
+            background-image: linear-gradient(to top, rgba(0, 255, 255, 0.954),rgba(67, 65, 65, 0.92));
+          }
+        #result{
+            width: 160px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 60px;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+             }
+             option:hover{ background-color: gray;}
+         
+    </style>
+</head>
+<body>
+    <center> <h1>Unit Convertor</h1> </center>
+     <div class="main">
+        <div>
+        <label for="text"> From : </label>
+         <select name="" id="select">
+            <option value="Inch">Inch</option>
+            <option value="Foot">Foot</option>
+            <option value="Yard">Yard</option>
+            <option value="Centimeter">Centimeter</option>
+        </select>
+
+        <input type=number id="value">
+      </div>
+
+      <div class="main2">
+        <label for="text"> To : </label>
+         <select name="" id="select1">
+            <option value="Inch">Inch</option>
+            <option value="Foot">Foot</option>
+            <option value="Yard">Yard</option>
+            <option value="Centimeter">Centimeter</option>
+        </select>
+        </div>
+
+      <button type="submit" onclick="calc()">Calculate</button>
+
+        <div style="text-align: center;">
+            <label for="text">Result = </label>
+            <input type="number" id="result">
+        </div>
+     </div>
+</body>
+<script>
+    function calc(){
+        var select,select1,value,result;
+        select=document.getElementById("select").value;
+        value=document.getElementById("value").value;
+        select1=document.getElementById("select1").value;
+
+        if(select=='Inch' && select1=='Foot'){
+            result=value/12;
+        }
+        else if(select=='Foot' && select1=='Inch'){
+            result=value*12;
+        }
+        else if(select=='Inch' && select1=='Yard'){
+           result=value/34;
+        }
+        else if(select=='Yard' && select1=='Inch'){
+          result=value*34;
+       }
+       else if(select=='Inch' && select1=='Centimeter'){
+           result=value*10;
+        }
+        else if(select=='Centimeter' && select1=='Inch'){
+            result=value/10;
+        }
+        else if(select=='Foot' && select1=='Yard'){
+            result=value/2.5
+        }
+        else if(select=='Yard' && select1=='Foot'){
+            result=value*2.5
+        }
+        else if(select=='Yard' && select1=='Centimeter'){
+            result=value*75
+        }
+        else if(select=='Centimeter' && select1=='Yard'){
+            result=value/75
+        }
+        else if(select=='Centimeter' && select1=='Foot'){
+            result=value/30
+        }
+        else if(select=='Foot' && select1=='Centimeter'){
+            result=value*30
+        }
+        else if(select=='Inch' && select1=='Inch'){
+            result=value
+        }
+        else if(select=='Foot' && select1=='Foot'){
+            result=value
+        }
+        else if(select=='Yard' && select1=='Yard'){
+            result=value
+        }
+        else if(select=='Centimeter' && select1=='Centimeter'){
+            result=value
+        }
+        document.getElementById("result").value=result;
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 550px;
+            height: 400px;
+            background-image: linear-gradient(to right,rgb(153, 153, 227),rgb(51, 45, 45));
+            border-radius: 20px;
+            box-shadow: 3px 2px 4px 3px rgb(138, 138, 237), -3px -2px 4px 3px rgb(35, 31, 31);
+            margin: 30px auto;
+            padding: 8px ;
+        }
+        h1{
+            text-align: center;
+            font-size: 45px;
+            color: dimgray;
+        }
+        .label{
+           font-size: 20px;
+           margin-left: 52px;
+           color: azure;
+           font-family: cursive;  
+           
+
+        }
+        #num1{
+            padding: 5px;
+            margin-left: 52px;
+            width: 170px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31);
+
+        }
+        #num2{
+            margin-left: 58px;
+            width: 170px;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31);
+            margin-bottom: 20px;
+            
+
+
+        }
+        .select{
+            padding: 5px;
+            margin-left: 170px;
+            width: 170px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31);
+          
+           
+            
+
+        }
+       #select{
+            width: 75px;
+            font-size: 22px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31);
+        }
+        #select:hover{
+            color:rgba(5, 57, 109, 0.93);
+            transform: scale(1.02);
+           
+        }
+        button{
+            height: 38px;
+            width: 200px;
+            background-color:white ;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31) ;
+            margin-top: 40px;
+            margin-left: 160px;
+
+        }
+        button:hover{
+            background-color:  rgb(138, 138, 237);
+        }
+      #result{
+            height: 38px;
+            width: 200px;
+            background-color:white ;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 1px 1px 1px 1px rgb(138, 138, 237), -1px -1px 1px 1px rgb(35, 31, 31) ;
+           margin-top: -80px;
+            margin-left: 160px;
+
+      }
+     
+      
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="main">
+        <div>
+            <label class="label" for="number"> Enter First Number</label>
+            <label class="label" for="number">Enter Second Number</label>
+        </div>
+        <div class="input">
+            <input type=number id="num1">
+            <input type=number id="num2">
+
+        </div>
+   
+
+    <!--Select the Operators-->
+    <div class="select">
+        <label for="Select" style=" text-align: center;font-size: 18px; color: azure; font-family: cursive;  
+        ">Select the Operators</label>
+   
+        <select name="" id="select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+    </div>
+    <button type="submit" onclick="calc()">Calculate</button>
+    
+
+    
+
+     <div>
+        <h2>RESULT=</h2>
+    <input type="number" id="result">
+     </div>
+
+
+</div>
+</body>
+<script>
+    function calc(){
+        var num1,num2,select,result;
+        num1=document.getElementById("num1").value;
+        num2=document.getElementById("num2").value;
+        select=document.getElementById("select").value;
+        num1=Number.parseInt(num1);
+        num2=Number.parseInt(num2);
+   
+
+    if(select=='+')
+    {
+        result=num1+num2
+    }
+    else if(select=='-'){
+        result=num1-num2
+
+    }
+    else if(select=='*'){
+        result=num1*num2
+
+    }
+    else if(select=='/'){
+        result=num1/num2
+
+    }
+
+    document.getElementById("result").value=result;
+}
+</script>
+</html>

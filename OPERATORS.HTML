@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<div style="margin: 150px auto; width: 500px;height: 500px; background-color: cadetblue;font-size: 18px;
+font-family: 'Courier New', Courier, monospace;font-style: italic; text-align: center;font-weight: bold;">
+<script>
+    document.write("<br><br><br>")
+
+    var chet=prompt("Enter Chemistry total Marks= ")
+    document.write("Chemistry total Marks= ")
+    document.write(chet)
+
+    var cheo=prompt("Enter Chemistry Obtained Marks= ")
+    document.write("<br>Chemistry obtained Marks= ")
+    document.write(cheo)
+
+    var result=(cheo/chet*100)
+    document.write("<br>Persentage= ")
+    document.write(result)
+    document.write("%")
+
+    document.write("<br><br><br>") 
+
+    var Engt=prompt("Enter English total Marks= ")
+    document.write("English total Marks= ")
+    document.write(Engt)
+
+    var Engo=prompt("Enter English Obtained Marks= ")
+    document.write("<br>English obtained Marks= ")
+    document.write(Engo)
+
+    var result1=(Engo/Engt*100)
+    document.write("<br>Persentage")
+    document.write(result1)
+    document.write("%")
+
+    document.write("<br><br><br>") 
+
+    var phyt=prompt("Enter Physics total Marks= ")
+    document.write("Physics Total Marks= ")
+    document.write(phyt)
+
+    var phyo=prompt("Enter Physics obtained Marks= ")
+    document.write("<br>Physics Obtained  Marks= ")
+    document.write(phyo)
+
+    var result2=(phyo/phyt*100)
+    document.write("<br>Persentage")
+    document.write(result2)
+    document.write("%")
+ 
+    document.write("<br><br><br>") 
+
+    document.write("<br><br>Total Marks = ")
+    var t=(parseInt(chet)+parseInt(phyt)+parseInt(Engt))
+    document.write(t)
+
+    document.write("<br>Obtained Marks = ")
+    var o=(parseInt(cheo)+parseInt(phyo)+parseInt(Engo))
+    document.write(o)
+
+    document.write("<br> Persentage= ")
+    var result3=(o/t*100)
+    document.write(result3)
+    document.write(" %")
+    document.write("<br>Your Grade is = ")
+
+    if (result3<50) {
+        document.write( "grade is F")
+
+    }
+
+    else if  (result3<60) {
+        document.write( "grade is D")
+
+    }
+    else if  (result3<70) {
+        document.write( "grade is c")
+
+    }
+    else if  (result3<80) {
+        document.write( "grade is b")
+
+    }
+    else if  (result3<90) {
+        document.write( "grade is A")
+
+    }
+    else if  (result3<=100) {
+        document.write( "grade is A+")
+
+    }
+
+</script>
+</div>
+</html>

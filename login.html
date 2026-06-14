@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 400px;
+            height: 400px;
+            border: 2px solid whitesmoke;
+            box-shadow: 3px 3px 3px 3px black,-3px -3px 3px 3px black;
+            border-radius:20px ;    
+            margin: auto;
+            text-align: center;
+            margin-top: 90px;
+                }
+        input{
+            display: flex;
+            width: 250px;
+            text-align: center;
+            margin-left: 70px;
+            margin-bottom: 50px;
+            height: 40px;
+            border-radius: 20px;
+            font-weight: bolder;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            font-weight: bolder;
+            font-size: 15px;
+            background-color: rgba(107, 116, 216, 0.849);
+            color: aliceblue;
+        }
+        button:hover{
+            background-color: blue;
+        }
+        #alert{
+            color: red;
+        }
+    
+    </style>
+</head>
+<body>
+    <section>
+    
+      <div class="main">
+
+        <h1 style="text-align: center;margin-bottom: 40px;">Login page</h1>
+         <input type="password" id="pass" placeholder="Enter password">
+          <input type="password" id="cpass" placeholder="Confirm password" onkeyup="check(this)">
+           <div id="alert"></div>
+     
+       <div id="btn">
+        <button> Login </button>
+         <button onclick="toggle(this)">Show password</button>
+      </div>
+    </div>
+   </section>
+    
+</body>
+<script>
+    var pass = document.getElementById('pass');
+    var cpass = document.getElementById('cpass');
+    var alertBox = document.getElementById('alert');
+
+    function toggle(button){
+        var type = pass.getAttribute('type');
+        var ctype = cpass.getAttribute('type');
+        if (type === 'password' && ctype === 'password') {
+            pass.setAttribute('type', 'text');
+            cpass.setAttribute('type', 'text');
+            button.innerText = 'Hide password';
+        } else {
+            pass.setAttribute('type', 'password');
+            cpass.setAttribute('type', 'password');
+            button.innerText = 'Show password';
+        }
+    }
+
+    function check(elem) {
+        if (!pass.value) {
+            alertBox.innerText = 'Please enter a password first';
+            return;
+        }
+
+        if (!elem.value) {
+            alertBox.innerText = '';
+            return;
+        }
+
+        if (elem.value !== pass.value) {
+            alertBox.innerText = 'Passwords do not match';
+        } else {
+            alertBox.innerText = '';
+        }
+    } 
+ 
+</script>
+</html>

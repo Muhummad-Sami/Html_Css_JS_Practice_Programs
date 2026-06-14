@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body{
+        padding: 0px;
+        margin: 0px;
+    }
+    .main{
+        background-color: rgba(0, 0, 0, 0.952);
+        width: 100%;
+        height: 400px;
+        text-align: center;
+      
+    }
+    .h1{
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        padding-top: 60px;
+        margin-bottom: 60px;
+    }
+    .inputs{
+        
+        display: flex;
+        margin-left: 350px;
+       }
+
+       #num1{
+      width: 350px;
+      height: 50px;
+      border-radius: 30px 30px 0px 0px;
+      text-align: center;
+      font-weight: bolder;
+    
+       }
+       #num2{
+        width: 350px;
+      height: 50px;
+      text-align: center;
+      font-size: 22px;
+      color: green;
+      font-weight: bolder;
+      border: 2px solid white;
+      margin-top: 60px;
+       }
+       #num3{
+        width: 350px;
+      height: 50px;
+      text-align: center;
+      font-size: 22px;
+      color: rgb(65, 107, 107);
+      font-weight: bolder;
+      border: 2px solid white;
+       }
+       #num4{
+        width: 300px;
+      height: 50px; 
+      text-align: center;
+      font-size: 22px;
+      color: green;
+      font-weight: bolder;
+      border: 2px solid white;
+       }
+
+       .main2{
+        width: 100%;
+        height: 400px;
+        display: flex;
+      
+       }
+       p{
+       font-size: 35px;
+       padding: 0px 50px;
+       text-decoration: underline;
+       font-weight: bold;   
+    }
+   .main3{
+        
+        height: 100px;
+        display: flex;
+        margin-left: 350px;
+        margin-top: -380px;
+    }
+    button:hover{
+        color: rgb(199, 230, 25);
+    }
+   </style>
+
+</head>
+<body>
+<section>
+
+   <div class="main">
+
+     <div class="h1">Income Tax Calculator 2026 – 27</div>
+      <div class="inputs">
+       <input id="num1" type="number" min="0" step="0.01" placeholder="Your annual taxable income" style="font-size: 25px;">
+        <button onclick="fun()" style="width: 200px; background-color: rgba(21, 206, 21, 0.889); border-radius: 30px 30px 0px 0px;font-size: 28px;font-weight: bolder;" type="button">Calculate</button>
+
+   </div>
+
+    <p style="color: white;font-size: 18px;margin-right: 28px;margin-top: -1px;">* Last updated: 27 June 2026. Check out our Terms & Conditions.</p>
+
+</section>
+
+<section>
+
+    <div class="main2">
+     <img src="cal2.jpg" alt="Tax calculator illustration" width="25%">
+    </div>
+    
+    <div class="main3">
+      <p> Total salary<br></p>
+       <p> Tax deduction<br> </p>
+        <p> Remaining salary<br></p> 
+    </div>
+
+    <input type="number" id="num2" readonly style="width: 160px; height: 40px;margin-left: 370px;">  
+     <input type="number" id="num3" readonly style="width: 160px; height: 40px;margin-left: 90px;">
+      <input type="number" id="num4" readonly style="width: 160px; height: 40px;margin-left: 140px;">
+       
+</section>             
+    </div>
+
+</body>
+<script>
+    function fun(){
+        var incomeInput = document.getElementById("num1");
+        var income = Number.parseFloat(incomeInput.value);
+        if (isNaN(income) || income < 0) {
+            alert("Please enter a valid income amount.");
+            incomeInput.focus();
+            return;
+        }
+
+        var tax = 0;
+
+        if (income <= 600000) {
+            tax = 0;
+        } else if (income <= 1200000) {
+            tax = (income - 600000) * 0.025;
+        } else if (income <= 2400000) {
+            tax = 15000 + (income - 1200000) * 0.125;
+        } else if (income <= 3600000) {
+            tax = 165000 + (income - 2400000) * 0.175;
+        } else if (income <= 6000000) {
+            tax = 375000 + (income - 3600000) * 0.20;
+        } else if (income <= 12000000) {
+            tax = 855000 + (income - 6000000) * 0.225;
+        } else if (income <= 30000000) {
+            tax = 2205000 + (income - 12000000) * 0.25;
+        } else if (income <= 50000000) {
+            tax = 7705000 + (income - 30000000) * 0.275;
+        } else {
+            tax = 13705000 + (income - 50000000) * 0.325;
+        }
+
+        var remaining = income - tax;
+
+        document.getElementById("num2").value = income.toFixed(2);
+        document.getElementById("num3").value = tax.toFixed(2);
+        document.getElementById("num4").value = remaining.toFixed(2);
+    }
+</script>
+</html>
